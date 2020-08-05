@@ -17,12 +17,12 @@ Inside this file we are importing *rename.py*. These are some details about the 
 ### [1] Directory of image files
 First of all we must define the directory to our folder with the image files.
 
-### [2] 3 windows inside the frame
+### [2] Three windows inside the frame
 We define the dimensions of 3 basic windows inside the frame in which the images will be displayed. The left window is used for the past (*already seen*) image, the right window is used for the new (*not seen yet*) image and the middle window is for the current (*watching now*) image.
 
 <p align="center">
-  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider1.png"
-  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider6.png"       
+  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider1.png">  
+  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider6.png">      
 </p>
 
 ### [3]
