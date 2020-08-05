@@ -12,7 +12,7 @@ There are two basic python files in this project.
 This file contains the code required to rename all the images in the main folder. If we have a folder containing for example 5 image files, then when we run *rename.py* all of the image files are being renamed to the form **pic+number_of_image+.+extension** (e.g. pic2.jpg)
 
 ## *image_viewer.py*
-Inside this file we are importing *rename.py*. These are some details about the program.
+Inside this file we are importing *rename.py*. Below there are some details about the program.
 
 ### [1] Directory of image files
 First of all we must define the directory to our folder with the image files.
