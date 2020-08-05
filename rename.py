@@ -12,7 +12,7 @@ for i, filename in enumerate(files):
     file_extension = filename.split('.')[-1]
 
     original = os.path.join(path, filename)
-    new = os.path.join(path, 'pic' + str(i) + '.' + file_extension)
+    new = os.path.join(path, 'pic' + str(i+1) + '.' + file_extension)
     
     # Rename each file
     os.rename(original, new)
