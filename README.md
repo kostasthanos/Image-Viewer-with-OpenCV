@@ -47,7 +47,7 @@ img_new_bottom_right = (img_new_top_left[0]+180, img_new_top_left[1]+90)
 </p>
 
 ### [3] Define the testing area
-Now it's time to set our testing area. This will be the area (sub-frame) inside the main frame in which our color-finger tracking will be active.
+This will be the area (sub-frame) inside the main frame in which our color-finger tracking will be active.
 
 ```python
 # Set the color-finger tracking window frame
@@ -58,11 +58,38 @@ cv2.polylines(frame, [finger_window], True, (0,255,0), thickness=3)
 finger_left_window = np.array([[[0,460], [0,h], [320,h], [320,460]]], np.int32)  # Finger Left Window
 finger_right_window = np.array([[[w-320,460], [w-320,h], [w,h], [w,460]]], np.int32) # Finger Right Window
 ```
+The area in which the color-finger tracking is active is with the green color.
 <p align="center">
-  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider5.png">     
+  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider5.png">    
+  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider4.png">   
 </p>
 
-The area in which the color-finger tracking is active is with green color in the picture below.
-<p align="center">
-  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider4.png">     
-</p>
+### [4] 
+Now it's time for the coding that we need to track the finger or any color. To do that we are following these steps.
+1. Apply hsv format on frame
+2. Define the range for our color with lower and upper color arrays
+3. Create a mask with the previous values
+4. Find the maximum contour area 
+
+The code for the above steps is the following :
+
+```python
+# Apply hsv format on frame
+hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+# Define range for green color (this can be changed to any color)
+lower_color = np.array([67, 231, 0])
+upper_color = np.array([180, 255, 255])
+# Create a mask
+mask = cv2.inRange(hsv, lower_color, upper_color)
+# Find the contours for the above mask
+contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+# Find the maximum contour area
+for contour in contours:
+    # Find the area of each contour
+    area = cv2.contourArea(contour)
+    M = cv2.moments(contour)
+    # Continue only if area > 100
+    if area > 100:
+        # Draw each contour
+        cv2.drawContours(frame, [contour], -1, (0,255,0), 2)
+```
