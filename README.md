@@ -64,32 +64,36 @@ The area in which the color-finger tracking is active is with the green color.
   <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider4.png">   
 </p>
 
-### [4] 
-Now it's time for the coding that we need to track the finger or any color. To do that we are following these steps.
+### [4] Color tracking part
+Now it's time for the coding part that we need to track the finger or any color. To do that we are following these steps.
 1. Apply hsv format on frame
 2. Define the range for our color with lower and upper color arrays
 3. Create a mask with the previous values
 4. Find the maximum contour area 
 
-The code for the above steps is the following :
+**Note ! : Check [Hand Tracking and Finger Counting](https://github.com/kostasthanos/Hand-Gestures-and-Finger-Counting) repository for more details about contours and convex hull **
+
+### [5] Track the center of the max contour
+By tracking the center of the maximum contour area we can decide if it's in the left or the right window. So we can choose to move images left or right.
 
 ```python
-# Apply hsv format on frame
-hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-# Define range for green color (this can be changed to any color)
-lower_color = np.array([67, 231, 0])
-upper_color = np.array([180, 255, 255])
-# Create a mask
-mask = cv2.inRange(hsv, lower_color, upper_color)
-# Find the contours for the above mask
-contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
-# Find the maximum contour area
-for contour in contours:
-    # Find the area of each contour
-    area = cv2.contourArea(contour)
-    M = cv2.moments(contour)
-    # Continue only if area > 100
-    if area > 100:
-        # Draw each contour
-        cv2.drawContours(frame, [contour], -1, (0,255,0), 2)
+# Find each contour center
+if int(M["m00"])!=0:
+    cx = int(M["m10"] / M["m00"])
+    cy = int(M["m01"] / M["m00"])
+    cv2.circle(frame, (cx, cy), 2, (0,0,255), 2)
 ```
+
+### [6] An Example
+Let's say that we run the script. The first frame will be something like the following one.
+<p align="center">
+  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider2.png">   
+</p>
+
+If we move our color tracker or finger towards the left window then our viewer will move one image forward. So the new frame will be like this one.
+<p align="center">
+  <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider6.png">   
+</p>
+
+## Author
+* **Konstantinos Thanos**
