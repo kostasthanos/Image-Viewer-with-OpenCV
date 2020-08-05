@@ -18,7 +18,7 @@ Inside this file we are importing *rename.py*. Below there are some details abou
 First of all we must define the directory to our folder with the image files.
 
 ```python
-directory = "path_to_imag_files/images"
+directory = "path_to_image_files/images"
 ```
 
 ### [2] Three windows inside the frame
@@ -71,7 +71,7 @@ Now it's time for the coding part that we need to track the finger or any color.
 3. Create a mask with the previous values
 4. Find the maximum contour area 
 
-**Note ! : Check [Hand Tracking and Finger Counting](https://github.com/kostasthanos/Hand-Gestures-and-Finger-Counting) repository for more details about contours and convex hull **
+**Note !** : Check [Hand Tracking and Finger Counting](https://github.com/kostasthanos/Hand-Gestures-and-Finger-Counting) repository for more details about contours and convex hull **
 
 ### [5] Track the center of the max contour
 By tracking the center of the maximum contour area we can decide if it's in the left or the right window. So we can choose to move images left or right.
@@ -90,7 +90,7 @@ Let's say that we run the script. The first frame will be something like the fol
   <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider2.png">   
 </p>
 
-If we move our color tracker or finger towards the left window then our viewer will move one image forward. So the new frame will be like this one.
+If we move our color tracker or finger towards the left window then our viewer will move one image forward. So the new frame will be like this :
 <p align="center">
   <img with="400" height="334" src="https://raw.githubusercontent.com/kostasthanos/Image-Viewer-with-OpenCV/master/imgs/slider6.png">   
 </p>
