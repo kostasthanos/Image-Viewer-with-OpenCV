@@ -1,5 +1,5 @@
 # Rename all files inside a folder (directory)
-# In this form : pic(number).extension
+# Format : pic(number).extension
 import os
 path = 'images'
 
