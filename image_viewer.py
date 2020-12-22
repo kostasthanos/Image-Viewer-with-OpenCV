@@ -1,6 +1,8 @@
 #===========================#
-# @2020 Konstantinos Thanos #
-#    All Rights Reserved    #
+# Image Viewer with OpenCV  #
+#===========================#
+#    Konstantinos Thanos    #
+#     Mathematician, MSc    #
 #         05/08/2020        #
 #===========================# 
 
@@ -13,7 +15,7 @@ import cv2
 # Import rename.py file content
 from rename import *
 
-# Set the directory which contains the images
+# Set the directory that contains the images
 directory = "images"
 
 # Count the number of images with os library
