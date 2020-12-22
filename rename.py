@@ -7,6 +7,7 @@ files = os.listdir(path)
 
 file_counter = 0
 
+# Count files inside folder
 for i, filename in enumerate(files):
     file_counter += 1
     file_extension = filename.split('.')[-1]
