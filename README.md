@@ -1,4 +1,4 @@
-# Image viewer with OpenCV
+# Image viewer with color tracking using OpenCV
 This a simple image viewer using OpenCV library and color tracking.
 
 ## Main Idea
