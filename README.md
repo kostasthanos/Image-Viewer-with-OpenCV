@@ -2,7 +2,7 @@
 This a simple image viewer using OpenCV library and color tracking.
 
 ## Main Idea
-The main idea of this project is that any user having a folder with image files in it can run the script and watch the images one by one using hand+color movement  and trackig in order to view the next image each time.
+The main idea of this project is that any user having a folder with image files in it can run the script and watch the images one by one using hand+color movement  and trackig in order to view the next or previous image each time.
 
 There are two basic python files in this project.
 1. *rename.py*
