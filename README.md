@@ -71,7 +71,7 @@ Now it's time for the coding part that we need to track the finger or any color.
 3. Create a mask with the previous values
 4. Find the maximum contour area 
 
-**Note !** : Check [Hand Tracking and Finger Counting](https://github.com/kostasthanos/Hand-Gestures-and-Finger-Counting) repository for more details about contours and convex hull
+**Note !** : Check [Hand-Detection-and-Finger-Counting](https://github.com/kostasthanos/Hand-Detection-and-Finger-Counting) repository for more details about contours and convex hull.
 
 ### [5] Track the center of the max contour
 By tracking the center of the maximum contour area we can decide if it's in the left or the right window. So we can choose to move images left or right.
