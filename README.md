@@ -5,7 +5,7 @@ This a simple image viewer using OpenCV library and color tracking.
 The main idea of this project is that any user having a folder with image files in it can run the script and watch the images one by one using hand+color movement  and trackig in order to view the next or previous image each time.
 
 There are two basic python files in this project.
-1. [https://github.com/kostasthanos/Image-Viewer-with-color-tracking/blob/master/rename.py]{*rename.py*}
+1. {https://github.com/kostasthanos/Image-Viewer-with-color-tracking/blob/master/rename.py}[*rename.py*]
 2. [*image_viewer.py*]{https://github.com/kostasthanos/Image-Viewer-with-color-tracking/blob/master/image_viewer.py}
 
 ## *rename.py*
