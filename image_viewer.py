@@ -3,7 +3,7 @@
 #===========================#
 #    Konstantinos Thanos    #
 #     Mathematician, MSc    #
-#         05/08/2020        #
+#           2020            #
 #===========================# 
 
 # Import Libraries
